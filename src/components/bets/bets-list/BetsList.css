@@ -1,0 +1,12 @@
+.bets-list-item {
+  padding: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, .3);
+}
+
+.bets-list-item-description {
+  font-weight: 900;
+}
+
+.bets-list-item-info {
+  color: rgba(0, 0, 0, .5);
+}

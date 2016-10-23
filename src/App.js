@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+// Components
+import BetsList from './components/bets/bets-list/BetsList';
+
 import './App.css';
 
 let nextBetId = 1;
@@ -18,8 +21,8 @@ class App extends Component {
     newBetDescription: '',
   }
 
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.handleNewBetChange = this.handleNewBetChange.bind(this);
     this.handleNewBetSubmit = this.handleNewBetSubmit.bind(this);
@@ -59,14 +62,8 @@ class App extends Component {
 
         <hr />
 
-        <ul>
-          { bets.map(bet => (
-            <li key={ bet.id }>
-              { bet.description }
-              <div>Participantes: { bet.participants }</div>
-            </li>
-          )) }
-        </ul>
+        <BetsList bets={ bets } />
+
       </div>
     );
   }
