@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 // Components
 import BetsList from './components/bets/bets-list/BetsList';
+import BetsForm from './components/bets/bets-form/BetsForm';
 
 import './App.css';
 
@@ -55,12 +56,11 @@ class App extends Component {
       <div className="app">
         <h2>Bolões</h2>
 
-        <form onSubmit={ this.handleNewBetSubmit } action="">
-          <input value={ newBetDescription } onChange={ this.handleNewBetChange } />
-          <button type="submit">Adicionar</button>
-        </form>
-
-        <hr />
+        <BetsForm
+          description={ newBetDescription }
+          handleSubmit={ this.handleNewBetSubmit }
+          handleChange={ this.handleNewBetChange }
+          />
 
         <BetsList bets={ bets } />
 
